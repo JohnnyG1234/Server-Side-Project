@@ -18,9 +18,9 @@ USE `mydb` ;
 -- -----------------------------------------------------
 -- Table `Address Type`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `Address Type` ;
+DROP TABLE IF EXISTS `Address_Type` ;
 
-CREATE TABLE IF NOT EXISTS `Address Type` (
+CREATE TABLE IF NOT EXISTS `Address_Type` (
   `add_id` INT NOT NULL,
   `address_description` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`add_id`))
@@ -47,7 +47,6 @@ DROP TABLE IF EXISTS `Customer` ;
 
 CREATE TABLE IF NOT EXISTS `Customer` (
   `cid` INT NOT NULL,
-  `title` CHAR(4) NOT NULL,
   `cfn` VARCHAR(45) NOT NULL,
   `cln` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`cid`))
@@ -71,9 +70,9 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `Contact Type`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `Contact Type` ;
+DROP TABLE IF EXISTS `Contact_Type` ;
 
-CREATE TABLE IF NOT EXISTS `Contact Type` (
+CREATE TABLE IF NOT EXISTS `Contact_Type` (
   `contact_id` INT NOT NULL,
   `contact_description` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`contact_id`))
