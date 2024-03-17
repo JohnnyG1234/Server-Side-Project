@@ -202,4 +202,8 @@ insert into CustomerContact VALUES(62,11, 'JenniferAtrast@gmail.com');
 insert into CustomerContact VALUES(62,44, '804-768-8717');
 
 
+-- Address inserts ??
+
+
+
 
