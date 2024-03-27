@@ -1,0 +1,62 @@
+.grid-container {
+    display: grid;
+    grid-template-areas:
+      'header header header header header'
+      'sideBar sideBar image image image'
+      'sideBar sideBar image image image';
+  }
+
+  .text
+  {
+    font-family: 'Lucida Sans';
+  }
+
+  .selectedTabText
+  {
+    color: white
+  }
+
+  .body
+  {
+    background-color:#d1f9d8;
+  }
+
+  .navbar
+  {
+    grid-area: header;
+    box-sizing: border-box;
+    align-self: stretch;
+    border: 2px solid black;
+    background-color: #80e307;
+    text-align: center;
+    padding: 30px;
+    font-size: 30px;
+  }
+
+.navBarFlex
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-around;
+}
+
+.image
+{
+  grid-area: image;
+  place-self: center;
+  margin: 2%;
+  margin-bottom: 4%;
+  width: 80%;
+  height: 80%;
+}
+
+.sidebar
+{
+  grid-area: sideBar;
+  background-color: #137e6d;
+  border: 2px solid black;
+  margin: 2%;
+}
