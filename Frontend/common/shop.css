@@ -1,0 +1,118 @@
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        'header header header header'
+        'div1 div1 div2 div2'
+        'div3 div3 div4 div4'
+        'cart cart cart cart';
+}
+
+.text {
+    font-family: 'Lucida Sans';
+}
+
+
+.productImg {
+    max-width: 60%;
+}
+.productText{
+    text-align: left;
+    font-size: 1.5em;
+}
+.bikeForm{
+    font-size: 1.5em;
+}
+
+.selectedTabText {
+    color: white
+}
+
+.body {
+    background-color: #d1f9d8;
+}
+
+.div1 {
+    grid-area: div1;
+    padding: 5%;
+}
+
+.div2 {
+    grid-area: div2;
+    padding: 5%;
+}
+
+.div3 {
+    grid-area: div3;
+    padding: 5%;
+}
+
+.div4 {
+    grid-area: div4;
+    padding: 5%;
+}
+
+.cart{
+    grid-area: cart;
+    text-align: left;
+    padding-left: 2.5%;
+}
+.submitButton{
+    font-size: 1.5em;
+}
+
+.navbar {
+    grid-area: header;
+    box-sizing: border-box;
+    align-self: stretch;
+    border: 2px solid black;
+    background-color: #80e307;
+    text-align: center;
+    padding: 30px;
+    font-size: 30px;
+}
+
+.navBarFlex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-around;
+}
+
+.image {
+    grid-area: image;
+    place-self: center;
+    margin: 2%;
+    margin-bottom: 4%;
+    width: 80%;
+    height: 80%;
+    border: 2px solid black;
+}
+
+.rectangle {
+    height: 20%;
+    width: 70%;
+    background-color: #ffffe4;
+    border: 2px solid black;
+    text-align: center;
+    text-justify: center;
+    margin-top: 4%;
+}
+
+.rectangleFlex {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    align-content: center;
+}
+
+.headerText {
+    grid-area: text;
+    justify-self: center;
+    align-self: center;
+    font-size: 30px;
+    margin-top: 3%;
+}
