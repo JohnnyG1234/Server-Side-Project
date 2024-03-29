@@ -99,3 +99,16 @@
     font-size: 30px;
     margin-top: 3%;
 }
+
+/* https://stackoverflow.com/questions/6722467/how-do-i-remove-the-default-link-color-of-the-html-hyperlink-a-tag */
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color:#00A0C6; 
+  text-decoration:none; 
+  cursor:pointer;  
+}

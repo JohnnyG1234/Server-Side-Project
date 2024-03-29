@@ -113,3 +113,14 @@
     font-size: 30px;
     margin-top: 3%;
 }
+
+a {
+    color: black;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color:#00A0C6; 
+    text-decoration:none; 
+    cursor:pointer;  
+  }
