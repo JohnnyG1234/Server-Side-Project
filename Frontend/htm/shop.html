@@ -7,6 +7,7 @@
   <title>New-England-Bikes-Shop</title>
   <link rel="stylesheet" href="../common/shop.css">
   <link rel="icon" type="image/x-icon" href="../img/bike.svg">
+  <script src="../common/shop.js"></script> 
 </head>
 
 <body class="text body">
@@ -22,11 +23,11 @@
     <div class="div1">
       <img class=productImg
         src="https://www.prioritybicycles.com/cdn/shop/products/main_600x_37056c95-ce48-415a-86e4-da527b4e8b23.jpg?v=1708061432&width=1500">
-      <form action="/cart.htm" class="bikeForm">
         <label for="quantity">Bike 1:</label>
         <input type="number" id="bike1" name="bike1" min="1" max="99">
-      </form>
-      <div class="productText">Price: 500.00 <button type="button" id="button4" class="submitButton"> Add to Cart</button></div>
+      <div class="productText">Price: 500.00 
+        <button onclick="addBike" type="button" id="button1" class="submitButton"> Add to Cart</button>
+      </div>
     </div>
 
     <div class="div2">
