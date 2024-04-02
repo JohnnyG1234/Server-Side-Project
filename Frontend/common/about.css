@@ -2,7 +2,7 @@
     display: grid;
     grid-template-areas:
       'header header header header header'
-      'sideBar text    text  text  text'
+      'about text    text  text  text'
       'sideBar image   image image image'
       'sideBar image   image image image';
   }
@@ -62,8 +62,8 @@ a {
   grid-area: image;
   justify-self: center;
   align-self: flex-start;
-  width: 65%;
-  height: 70%;
+  width: 70%;
+  height: 75%;
   border: 2px solid black;
 }
 
@@ -132,4 +132,9 @@ a {
 .profile6
 {
     grid-area: f;
+}
+
+.about
+{
+  grid-area: about;
 }
