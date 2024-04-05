@@ -53,10 +53,16 @@
     padding: 5%;
 }
 
-.submitButton {
-    font-family: 'Lucida Sans';
-    font-size: 1em;
-}
+.button {
+    transition-duration: 0.4s;
+    font-size: 20px;
+    padding: 10px;
+  }
+  
+  .button:hover {
+    background-color: #04AA6D; /* Green */
+    color: white;
+  }
 
 .navbar {
     grid-area: header;
