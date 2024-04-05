@@ -2,9 +2,9 @@
     display: grid;
     grid-template-areas:
       'header header header header header'
-      'sideBar sideBar text  text  text'
-      'sideBar sideBar image image image'
-      'sideBar sideBar image image image';
+      'cart cart cart cart cart '
+      'cart cart cart cart cart '
+      'Total Total Total Total Total ';
   }
 
   .text
@@ -55,3 +55,22 @@ a {
     text-decoration:none; 
     cursor:pointer;  
   }
+
+
+.tableStyle
+{
+  width: 80%;
+  grid-area: cart;
+  align-self: center;
+  justify-self: center;
+  margin: 20px;
+  border: 2px solid black;
+}
+
+.total
+{
+  grid-area: Total;
+  justify-self: center;
+  align-self: center;
+  font-size: 30px;
+}

@@ -6,6 +6,7 @@
     <title>New-England-Bikes-Cart</title>
     <link rel="stylesheet" href="../common/cart.css">
     <link rel="icon" type="image/x-icon" href="../img/bike.svg">
+    <script src="../common/cart.js"></script> 
   </head>
   <body class="text body">
     <div class="grid-container">
@@ -16,6 +17,37 @@
         <div class="selectedTabText">Cart</div>
         <div><a href="about.html">About</a></div>
       </div>
+
+
+      <table class="tableStyle">
+        <tr>
+          <th>Item</th>
+          <th>Item Cost</th>
+          <th>Quantity</th>
+        </tr>
+        <tr id="bike1">
+          <th>Bike 1</th>
+          <th>500.00</th>
+          <th id="bike1Quantity"></th>
+        </tr>
+        <tr id="bike2">
+          <th>Bike 2</th>
+          <th>400.00</th>
+          <th id="bike2Quantity"></th>
+        </tr>
+        <tr id="bike3">
+          <th>Bike 3</th>
+          <th>1000.00</th>
+          <th id="bike3Quantity"></th>
+        </tr>
+        <tr id="bike4">
+          <th>Bike 4</th>
+          <th>1500.00</th>
+          <th id="bike4Quantity"></th>
+        </tr>
+      </table>
+
+      <div class="total" id="total">Total: 0</div>
 
   </body>
 </html>
