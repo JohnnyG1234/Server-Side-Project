@@ -29,46 +29,22 @@ onload = () => {
     let clearButton = document.getElementById("clearCart");
     clearButton.onclick = clearCart;
 
-    getBike1();
-    getBike2();
-    getBike3();
-    getBike4();
+    getBike("1");
+    getBike("2");
+    getBike("3");
+    getBike("4");
 
     getTotal();
 }
 
 
-const getBike1 = () => {
-    const bikeCookie = findCookie("bike1")
+const getBike = (bikeNumber) => {
+    const bikeCookie = findCookie("bike" + bikeNumber)
     console.log(bikeCookie);
 
-    let tableElement = document.getElementById("bike1Quantity")
+    let tableElement = document.getElementById("bike" + bikeNumber + "Quantity")
     tableElement.textContent = bikeCookie;
         
-}
-
-const getBike2 = () => {
-    const bikeCookie = findCookie("bike2")
-    console.log(bikeCookie);
-
-    let tableElement = document.getElementById("bike2Quantity")
-    tableElement.textContent = bikeCookie;
-}
-
-const getBike3 = () => {
-    const bikeCookie = findCookie("bike3")
-    console.log(bikeCookie);
-
-    let tableElement = document.getElementById("bike3Quantity")
-    tableElement.textContent = bikeCookie;
-}
-
-const getBike4 = () => {
-    const bikeCookie = findCookie("bike4")
-    console.log(bikeCookie);
-
-    let tableElement = document.getElementById("bike4Quantity")
-    tableElement.textContent = bikeCookie;
 }
 
 const getTotal = () => {
