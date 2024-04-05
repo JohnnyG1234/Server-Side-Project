@@ -70,10 +70,10 @@ const clearCart = () => {
     document.cookie="bike3=0;expires="+expdate+";path=/;SameSite ='Lax'";
     document.cookie="bike4=0;expires="+expdate+";path=/;SameSite ='Lax'";
 
-    getBike1();
-    getBike2();
-    getBike3();
-    getBike4();
+    getBike("1");
+    getBike("2");
+    getBike("3");
+    getBike("4");
     getTotal();
 }
 
