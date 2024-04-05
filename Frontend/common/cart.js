@@ -26,6 +26,9 @@ function findCookie(val) {
 
 onload = () => {
 
+    let clearButton = document.getElementById("clearCart");
+    clearButton.onclick = clearCart;
+
     getBike1();
     getBike2();
     getBike3();
@@ -74,10 +77,28 @@ const getTotal = () => {
     const bike3Value = findCookie("bike3")
     const bike4Value = findCookie("bike4")
 
+
     const total = Number(bike1Value) * bike1Cost + Number(bike2Value) * bike2Cost + Number(bike3Value) * bike3Cost + Number(bike4Value) * bike4Cost;
     
     let totalElement = document.getElementById("total")
     totalElement.textContent = 'Total: ' + total;
+}
+
+const clearCart = () => {
+    // date setup for cookies
+    var today = new Date();
+    var expdate = today.getTime()+(1000*60*60*24*7);
+
+    document.cookie="bike1=0;expires="+expdate+";path=/;SameSite ='Lax'";
+    document.cookie="bike2=0;expires="+expdate+";path=/;SameSite ='Lax'";
+    document.cookie="bike3=0;expires="+expdate+";path=/;SameSite ='Lax'";
+    document.cookie="bike4=0;expires="+expdate+";path=/;SameSite ='Lax'";
+
+    getBike1();
+    getBike2();
+    getBike3();
+    getBike4();
+    getTotal();
 }
 
 
