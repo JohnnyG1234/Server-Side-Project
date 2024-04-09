@@ -34,6 +34,9 @@ onload = () => {
     getBike("3");
     getBike("4");
 
+    let orderButton = document.getElementById("order");
+    orderButton.onclick = submit;
+
     getTotal();
 }
 
@@ -78,4 +81,7 @@ const clearCart = () => {
 }
 
 
+const submit = () => {
+    document.location.href = "submit.html";
+}
 

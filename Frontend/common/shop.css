@@ -57,6 +57,7 @@
     transition-duration: 0.4s;
     font-size: 20px;
     padding: 10px;
+    border: 2px solid black;
   }
   
   .button:hover {
@@ -130,4 +131,5 @@ a {
     color:#00A0C6; 
     text-decoration:none; 
     cursor:pointer;  
+    transition-duration: 200ms;
   }
