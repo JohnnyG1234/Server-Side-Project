@@ -16,6 +16,37 @@ onload = () => {
     button4.onclick = addBike4;
 }
 
+// a good refactor idea but need a way to pass an agruemnt to it when giving it to a button as an onClick function
+/*
+const addBike = (bikeNum) => {
+    let bikeString = "bike" + bikeNum;
+    console.log(bikeString);
+
+    // get rid of old cookie value
+    document.cookie = bikeString+"=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+    // get input
+    let input = document.getElementById(bikeString);
+    const num = input.value;
+
+    // date setup for cookies
+    var today = new Date();
+    var expdate = today.getTime()+(1000*60*60*24*7);
+
+    // do regex here to tell if its a number
+    const pattern = /[1-9]/g;
+    if (!pattern.test(num))
+    {
+        alert("Adding to cart failed, the input value must be a number");
+    }
+    else
+    {
+        // cookie it!
+        document.cookie= bikeString+"="+num+";expires="+expdate+";path=/;SameSite ='Lax'";
+    }
+}
+*/
+
 
 const addBike1 = () =>{
     console.log("bike 1");
@@ -32,9 +63,16 @@ const addBike1 = () =>{
     var expdate = today.getTime()+(1000*60*60*24*7);
 
     // do regex here to tell if its a number
-
-    // cookie it!
-    document.cookie="bike1="+num+";expires="+expdate+";path=/;SameSite ='Lax'";
+    const pattern = /[1-9]/g;
+    if (!pattern.test(num))
+    {
+        alert("Adding to cart failed, the input value must be a number");
+    }
+    else
+    {
+        // cookie it!
+        document.cookie="bike1="+num+";expires="+expdate+";path=/;SameSite ='Lax'";
+    }
 }
 
 const addBike2 = () =>{
@@ -51,10 +89,16 @@ const addBike2 = () =>{
     var today = new Date();
     var expdate = today.getTime()+(1000*60*60*24*7);
 
-    // do regex here to tell if its a number
-
-    // cookie it!
-    document.cookie="bike2="+num+";expires="+expdate+";path=/;SameSite ='Lax'";
+    const pattern = /[1-9]/g;
+    if (!pattern.test(num))
+    {
+        alert("Adding to cart failed, the input value must be a number");
+    }
+    else
+    {
+        // cookie it!
+        document.cookie="bike1="+num+";expires="+expdate+";path=/;SameSite ='Lax'";
+    }
 }
 
 const addBike3 = () =>{
@@ -71,10 +115,16 @@ const addBike3 = () =>{
     var today = new Date();
     var expdate = today.getTime()+(1000*60*60*24*7);
 
-    // do regex here to tell if its a number
-
-    // cookie it!
-    document.cookie="bike3="+num+";expires="+expdate+";path=/;SameSite ='Lax'";
+    const pattern = /[1-9]/g;
+    if (!pattern.test(num))
+    {
+        alert("Adding to cart failed, the input value must be a number");
+    }
+    else
+    {
+        // cookie it!
+        document.cookie="bike1="+num+";expires="+expdate+";path=/;SameSite ='Lax'";
+    }
 }
 
 const addBike4 = () =>{
@@ -91,8 +141,14 @@ const addBike4 = () =>{
     var today = new Date();
     var expdate = today.getTime()+(1000*60*60*24*7);
 
-    // do regex here to tell if its a number
-
-    // cookie it!
-    document.cookie="bike4="+num+";expires="+expdate+";path=/;SameSite ='Lax'";
+    const pattern = /[1-9]/g;
+    if (!pattern.test(num))
+    {
+        alert("Adding to cart failed, the input value must be a number");
+    }
+    else
+    {
+        // cookie it!
+        document.cookie="bike1="+num+";expires="+expdate+";path=/;SameSite ='Lax'";
+    }
 }
