@@ -111,4 +111,5 @@ a:hover {
   color:#00A0C6; 
   text-decoration:none; 
   cursor:pointer;  
+  transition-duration: 200ms;
 }

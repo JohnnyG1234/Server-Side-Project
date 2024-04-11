@@ -1,10 +1,10 @@
 .grid-container {
     display: grid;
     grid-template-areas:
-      'header header header header header'
-      'cart cart cart cart cart '
-      'cart cart cart cart cart '
-      'Total Total Total Total Total ';
+      'header header header header'
+      'cart cart cart cart '
+      'Total Total Total Total'
+      'clearcart clearcart order order';
   }
 
   .text
@@ -54,6 +54,7 @@ a {
     color:#00A0C6; 
     text-decoration:none; 
     cursor:pointer;  
+    transition-duration: 200ms;
   }
 
 
@@ -73,4 +74,28 @@ a {
   justify-self: center;
   align-self: center;
   font-size: 30px;
+}
+
+.button {
+  transition-duration: 0.4s;
+  font-size: 20px;
+  padding: 10px;
+  border: 2px solid black;
+}
+
+.button:hover {
+  background-color: #04AA6D; /* Green */
+  color: white;
+}
+
+.order {
+  grid-area: order;
+  justify-self: center;
+  align-self: center;
+}
+
+.clearCart {
+  grid-area: clearcart;
+  justify-self: center;
+  align-self: center;
 }
