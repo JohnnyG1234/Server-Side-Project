@@ -6,6 +6,7 @@
     <title>New-England-Bikes-Submit</title>
     <link rel="stylesheet" href="../common/submit.css">
     <link rel="icon" type="image/x-icon" href="../img/bike.svg">
+    <script type="text/javascript" src="../common/submit.js"></script> 
   </head>
   <body class="text body">
     <div class="grid-container">
@@ -16,7 +17,7 @@
             <div><a href="about.html">About</a></div>
         </div>
 
-        <form class="form" action="someRandomPhpPageYo" method="get">
+        <form class="form" action="../php/submit.php" method="post" onsubmit="submitForm()">
 
             <label for="fname">First Name: </label>
             <input class="formInput" id="fname" name="firstname" placeholder="Your name.." type="text">
@@ -45,7 +46,6 @@
 
             <label for="zip">Zip Code: </label>
             <input class="formInput" maxlength='5' id="zip" name="zip" placeholder="Your Zip Code.." type="text">
-            
               
             <input class="button" type="submit" value="Submit">
         </form>
