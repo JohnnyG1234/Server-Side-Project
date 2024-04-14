@@ -17,7 +17,7 @@
             <div><a href="about.html">About</a></div>
         </div>
 
-        <form class="form" name='form' action="../php/submit.php" method="post" onsubmit="submitForm()">
+        <form class="form" name='form' action="../php/submit.php" method="post" onsubmit='return submitForm();'>
 
             <label for="fname">First Name: </label>
             <input class="formInput" id="fname" name="firstname" placeholder="Your name.." type="text">
@@ -47,7 +47,7 @@
             <label for="zip">Zip Code: </label>
             <input class="formInput" maxlength='5' id="zip" name="zip" placeholder="Your Zip Code.." type="text">
               
-            <input class="button" type="submit" value="Submit">
+            <input class="button" type="submit" value='Continue'>
         </form>
         
 
