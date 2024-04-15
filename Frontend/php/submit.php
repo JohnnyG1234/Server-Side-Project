@@ -1,5 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
 <?php
 
-echo "<h1> Hello World </h1>";
+$firstName =  $_COOKIE["firstName"];
+
+echo "<h1>First name: $firstName</h1>"; 
 
 ?>
+
+
+</body>
+</html>
