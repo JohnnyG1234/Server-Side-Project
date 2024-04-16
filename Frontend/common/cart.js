@@ -46,15 +46,42 @@ const getBike = (bikeNumber) => {
     console.log(bikeCookie);
 
     let tableElement = document.getElementById("bike" + bikeNumber + "Quantity")
-    tableElement.textContent = bikeCookie;
-        
+    if (bikeCookie != null)
+    {
+        tableElement.textContent = bikeCookie; 
+    }
+    else
+    {
+        tableElement.textContent = 0;
+    }
+      
 }
 
 const getTotal = () => {
-    const bike1Value = findCookie("bike1")
-    const bike2Value = findCookie("bike2")
-    const bike3Value = findCookie("bike3")
-    const bike4Value = findCookie("bike4")
+    let bike1Value = findCookie("bike1")
+    let bike2Value = findCookie("bike2")
+    let bike3Value = findCookie("bike3")
+    let bike4Value = findCookie("bike4")
+
+    if (bike1Value === undefined)
+    {
+        bike1Value = 0;
+    }
+
+    if (bike2Value === undefined)
+    {
+        bike2Value = 0;
+    }
+
+    if (bike3Value === undefined)
+    {
+        bike3Value = 0;
+    }
+
+    if (bike4Value === undefined)
+    {
+        bike4Value = 0;
+    }
 
 
     const total = Number(bike1Value) * bike1Cost + Number(bike2Value) * bike2Cost + Number(bike3Value) * bike3Cost + Number(bike4Value) * bike4Cost;
