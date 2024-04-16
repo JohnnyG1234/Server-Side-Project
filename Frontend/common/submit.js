@@ -83,10 +83,14 @@ const validateData = () => {
     var today = new Date();
     var expdate = today.getTime()+(1000*60*60*24*7);
 
+
     document.cookie="firstName="+firstName+";expires="+expdate+";path=/;SameSite ='Lax'";
     document.cookie="lastName="+lastName+";expires="+expdate+";path=/;SameSite ='Lax'";
+    console.log("lastName");
     document.cookie="email="+email+";expires="+expdate+";path=/;SameSite ='Lax'";
-    document.cookie="phone="+phoneNumber+";expires="+expdate+";path=/;SameSite ='Lax'";
+    console.log("email");
+    document.cookie="phoneNumber="+phoneNumber+";expires="+expdate+";path=/;SameSite ='Lax'";
+    console.log("phoneNumber");
     document.cookie="addr="+address+";expires="+expdate+";path=/;SameSite ='Lax'";
     document.cookie="city="+city+";expires="+expdate+";path=/;SameSite ='Lax'";
     document.cookie="state="+state+";expires="+expdate+";path=/;SameSite ='Lax'";
@@ -98,3 +102,4 @@ const validateData = () => {
     // Now go to sumbmit.php
     return true;
 }
+
