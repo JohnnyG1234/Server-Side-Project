@@ -5,6 +5,8 @@
 
 <?php
 
+var_dump($_COOKIE);
+
 $firstName =  $_COOKIE["firstName"];
 $lastName = $_COOKIE["lastName"];
 $email = $_COOKIE["email"];
