@@ -4,6 +4,7 @@ const validateData = () => {
     const firstName = document.form.firstname.value;
     const lastName = document.form.lastname.value;
     const email = document.form.email.value;
+    const scode = document.form.scode.value;
     const sch = document.form.sch.value;
     const snumber = document.form.snumber.value;
     const address = document.form.address.value;
@@ -11,10 +12,14 @@ const validateData = () => {
     const state = document.form.state.value;
     const zip = document.form.zip.value;
 
+    const phoneNumber = String(scode) + String(sch) + String(snumber);
+
+
     var RegExpText = /^[A-Z a-z]+$/;
 	var RegExpST = /^[A-Za-z]{2}$/;
     var RegExpZip = /^[0-9]{5}$/;
     var RegExpEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+    var RegExpNumber = /^[0-9]{10}$/;
 
     if(!RegExpText.test(firstName))
     {
@@ -40,6 +45,38 @@ const validateData = () => {
 		document.form.email.backgroundColor = '#ffcccc';
 		return false; /*Keeps the user in the webpage*/   
     }
+    else if(!RegExpNumber.test(phoneNumber))
+    {
+        alert('Invalid input: Phone Number');
+		document.form.scode.focus();
+		document.form.scode.select();
+		document.form.scode.backgroundColor = '#ffcccc';
+		return false; /*Keeps the user in the webpage*/  
+    }
+    else if (!RegExpText.test(city))
+    {
+        alert('Invalid input: City');
+		document.form.city.focus();
+		document.form.city.select();
+		document.form.city.backgroundColor = '#ffcccc';
+		return false; /*Keeps the user in the webpage*/  
+    }
+    else if (!RegExpST.test(state))
+    {
+        alert('Invalid input: State');
+		document.form.state.focus();
+		document.form.state.select();
+		document.form.state.backgroundColor = '#ffcccc';
+		return false; /*Keeps the user in the webpage*/ 
+    }
+    else if (!RegExpZip.test(zip))
+    {
+        alert('Invalid input: Zip Code');
+		document.form.zip.focus();
+		document.form.zip.select();
+		document.form.zip.backgroundColor = '#ffcccc';
+		return false; /*Keeps the user in the webpage*/ 
+    }
 
     //everything is valid so make cookies 
     // date setup for cookies
@@ -49,6 +86,11 @@ const validateData = () => {
     document.cookie="firstName="+firstName+";expires="+expdate+";path=/;SameSite ='Lax'";
     document.cookie="lastName="+lastName+";expires="+expdate+";path=/;SameSite ='Lax'";
     document.cookie="email="+email+";expires="+expdate+";path=/;SameSite ='Lax'";
+    document.cookie="phone="+phoneNumber+";expires="+expdate+";path=/;SameSite ='Lax'";
+    document.cookie="addr="+address+";expires="+expdate+";path=/;SameSite ='Lax'";
+    document.cookie="city="+city+";expires="+expdate+";path=/;SameSite ='Lax'";
+    document.cookie="state="+state+";expires="+expdate+";path=/;SameSite ='Lax'";
+    document.cookie="zip="+zip+";expires="+expdate+";path=/;SameSite ='Lax'";
 
     console.log(document.cookie);
 
