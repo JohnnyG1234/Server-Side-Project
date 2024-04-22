@@ -12,15 +12,14 @@
 
 <div class="navbar navBarFlex">
             <div><a href="../htm/home.htm">Home</a></div>
-            <div> <a href="../htm/shop.html">Shop</a></div>
+            <div><a href="../htm/shop.html">Shop</a></div>
             <div><a href="../htm/cart.html">Cart</a></div>
             <div><a href="../htm/about.html">About</a></div>
 </div>
 
-
 <div class="grid-container">
-<?php
 
+<?php
 
 //getting cookies
 $firstName =  $_COOKIE["firstName"];
@@ -34,10 +33,10 @@ $zip = $_COOKIE["zip"];
 
 //outputing cookies
 echo '<div class="info rectangle">';
-echo "<p >Order confirmed, here is your info!</p>";
-echo "<p >First name: $firstName</p>"; 
-echo "<p>Last Name: $lastName</p>"; 
-echo "<p>Email: $email</p>"; 
+echo "<p>Order confirmed, here is your info!</p>";
+echo "<p>First name:  $firstName </p>"; 
+echo "<p>Last Name: $lastName </p>"; 
+echo "<p>Email: $email </p>"; 
 echo "<p>Phone Number: $phone</p>"; 
 echo "<p>Address: $addr</p>"; 
 echo "<p>City: $city</p>"; 
@@ -65,10 +64,30 @@ if (!$db_selected)
     die ('Can\'t use database $db : ' . $db->error); 
 }
 
+
+// Getting max customer ID
+
+$idQuery = "SELECT cid FROM customers.customer
+		 WHERE cid=(SELECT MAX(cid) FROM customers.customer)";
+$idResult = mysqli_query($customersLink,$idQuery);
+while($row = mysqli_fetch_array($idResult))
+	{
+		$cid = $row['cid'];
+	}
+if(!isset($cid))
+	{
+		$cid = 1;
+	}
+else
+	{
+		$cid = $cid + 1;
+	}
+
 // Insert some data
-$customersLink -> query("INSERT INTO customer VALUES (1, '$firstName', '$lastName')");
+$customersLink -> query("INSERT INTO customer VALUES ('$cid', '$firstName', '$lastName')");
 
 ?>
+
 </div>
 
 </body>
