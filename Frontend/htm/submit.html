@@ -49,11 +49,10 @@
 
             <label for="cardNumber">Card Number: </label>
             <input class="formInput" maxlength='16' id="cardNumber" name="cardNumber" placeholder="Your Card Number.." type="text">
-
-            <div class="custom-select">
-              Select Card Expiration Month: 
+            
+            <label for="cardMonth">Card Expiration Month: </label>
             <select id="cardMonth" name="cardMonth">
-              <option value="0">Select car:</option>
+              <option value="0">Select Month:</option>
               <option value="01">01</option>
               <option value="02">02</option>
               <option value="03">03</option>
@@ -67,7 +66,34 @@
               <option value="11">11</option>
               <option value="12">12</option>
             </select>
-          </div>
+
+            <label for="cardYear">Card Expiration Year: </label>
+            <select id="cardYear" name="cardYear">
+              <option value="0">Select Year:</option>
+              <option value="2025">2025</option>
+              <option value="2026">2026</option>
+              <option value="2027">2027</option>
+              <option value="2028">2028</option>
+              <option value="2029">2029</option>
+              <option value="2030">2030</option>
+            </select>
+
+            <br/>
+
+            <label for="cardName">Name On Card: </label>
+            <input class="formInput" id="cardName" name="cardName" placeholder="Name On Card.." type="text">
+
+            <label for="billingAddress">Billing Address: </label>
+            <input class="formInput" id="billingAddress" name="billingAddress" placeholder="Billing Address.." type="text">  
+
+            <label for="billingCity">Billing City: </label>
+            <input class="formInput" id="billingCity" name="billingCity" placeholder="Billing City.." type="text">
+
+            <label for="billingState">Billing State: </label>
+            <input class="formInput" maxlength='2' id="billingState" name="billingState" placeholder="Billing State.." type="text">
+
+            <label for="billingZip">Billing Zip Code: </label>
+            <input class="formInput" maxlength='5' id="billingZip" name="billingZip" placeholder="Billing Zip Code.." type="text">
 
               
             <input class="button" type="submit" value='Continue'>
