@@ -99,3 +99,8 @@ a {
 .phoneNumber{
   margin: 10px;
 }
+
+.custom-select{
+  margin: 20px;
+  padding: 30px;
+}

@@ -35,7 +35,7 @@
               <input name='snumber' type='text' maxlength='4' size='4'>
             </div>
 
-            <label for="address">Address: </label>
+            <label for="address">Shipping Address: </label>
             <input class="formInput" id="addr" name="address" placeholder="Your Address.." type="text">  
 
             <label for="city">City: </label>
@@ -46,6 +46,29 @@
 
             <label for="zip">Zip Code: </label>
             <input class="formInput" maxlength='5' id="zip" name="zip" placeholder="Your Zip Code.." type="text">
+
+            <label for="cardNumber">Card Number: </label>
+            <input class="formInput" maxlength='16' id="cardNumber" name="cardNumber" placeholder="Your Card Number.." type="text">
+
+            <div class="custom-select">
+              Select Card Expiration Month: 
+            <select id="cardMonth" name="cardMonth">
+              <option value="0">Select car:</option>
+              <option value="01">01</option>
+              <option value="02">02</option>
+              <option value="03">03</option>
+              <option value="04">04</option>
+              <option value="05">05</option>
+              <option value="06">06</option>
+              <option value="07">07</option>
+              <option value="08">08</option>
+              <option value="09">09</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+          </div>
+
               
             <input class="button" type="submit" value='Continue'>
         </form>
