@@ -1,6 +1,7 @@
-
+//This is really gross I'm sorry! -John
 const validateData = () => {
     
+    //customer info
     const firstName = document.form.firstname.value;
     const lastName = document.form.lastname.value;
     const email = document.form.email.value;
@@ -11,6 +12,17 @@ const validateData = () => {
     const city = document.form.city.value;
     const state = document.form.state.value;
     const zip = document.form.zip.value;
+
+    //billing info
+    const cardNum = document.form.cardNumber.value;
+    const cvnNum = document.form.CVN.value;
+    const cardMonth = document.form.cardMonth.value;
+    const cardYear = document.form.cardYear.value;
+    const cardName = document.form.cardName.value;
+    const billingAddress = document.form.billingAddress.value;
+    const billingCity = document.form.billingCity.value;
+    const billingState = document.form.billingState.value;
+    const billingZip = document.form.billingZip.value;
 
     const phoneNumber = String(scode) + String(sch) + String(snumber);
 
