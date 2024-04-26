@@ -32,6 +32,14 @@ $state = $_COOKIE["state"];
 $zip = $_COOKIE["zip"];
 
 $cardNum = $_COOKIE["cardNum"];
+$cvnNum = $_COOKIE["cvnNum"];
+$cardMonth = $_COOKIE["cardMonth"];
+$cardYear = $_COOKIE["cardYear"];
+$cardName = $_COOKIE["cardName"];
+$billingAddress = $_COOKIE["billingAddress"];
+$billingCity = $_COOKIE["billingCity"];
+$billingState = $_COOKIE["billingState"];
+$billingZip = $_COOKIE["billingZip"];
 
 //outputing cookies
 echo '<div class="info rectangle">';
