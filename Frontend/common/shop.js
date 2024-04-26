@@ -97,7 +97,7 @@ const addBike2 = () =>{
     else
     {
         // cookie it!
-        document.cookie="bike1="+num+";expires="+expdate+";path=/;SameSite ='Lax'";
+        document.cookie="bike2="+num+";expires="+expdate+";path=/;SameSite ='Lax'";
     }
 }
 
@@ -123,7 +123,7 @@ const addBike3 = () =>{
     else
     {
         // cookie it!
-        document.cookie="bike1="+num+";expires="+expdate+";path=/;SameSite ='Lax'";
+        document.cookie="bike3="+num+";expires="+expdate+";path=/;SameSite ='Lax'";
     }
 }
 
@@ -149,6 +149,6 @@ const addBike4 = () =>{
     else
     {
         // cookie it!
-        document.cookie="bike1="+num+";expires="+expdate+";path=/;SameSite ='Lax'";
+        document.cookie="bike4="+num+";expires="+expdate+";path=/;SameSite ='Lax'";
     }
 }
