@@ -34,6 +34,7 @@ const validateData = () => {
     var RegExpNumber = /^[0-9]{10}$/;
     var RegExpCardNumber = /^[0-9]{16}$/;
     var RegExpCVN = /^[0-9]{3}$/;
+    var RegExpAdd = /^[A-Z a-z 0-9]+$/
 
     if(!RegExpText.test(firstName))
     {
@@ -67,7 +68,7 @@ const validateData = () => {
 		document.form.scode.backgroundColor = '#ffcccc';
 		return false; /*Keeps the user in the webpage*/  
     }
-    else if (!RegExpText.test(address))
+    else if (!RegExpAdd.test(address))
     {
         alert('Invalid input: Address');
 		document.form.address.focus();
@@ -131,7 +132,7 @@ const validateData = () => {
 		document.form.billingCity.backgroundColor = '#ffcccc';
 		return false; /*Keeps the user in the webpage*/
     }
-    else if (!RegExpText.test(billingAddress))
+    else if (!RegExpAdd.test(billingAddress))
     {
         alert('Invalid input: Billing Address');
 		document.form.billingAddress.focus();

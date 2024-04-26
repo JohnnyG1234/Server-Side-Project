@@ -31,6 +31,8 @@ $city = $_COOKIE["city"];
 $state = $_COOKIE["state"];
 $zip = $_COOKIE["zip"];
 
+$cardNum = $_COOKIE["cardNum"];
+
 //outputing cookies
 echo '<div class="info rectangle">';
 echo "<p>Order confirmed, here is your info!</p>";
