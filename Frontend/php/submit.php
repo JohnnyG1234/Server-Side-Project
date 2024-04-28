@@ -31,6 +31,16 @@ $city = $_COOKIE["city"];
 $state = $_COOKIE["state"];
 $zip = $_COOKIE["zip"];
 
+$cardNum = $_COOKIE["cardNum"];
+$cvnNum = $_COOKIE["cvnNum"];
+$cardMonth = $_COOKIE["cardMonth"];
+$cardYear = $_COOKIE["cardYear"];
+$cardName = $_COOKIE["cardName"];
+$billingAddress = $_COOKIE["billingAddress"];
+$billingCity = $_COOKIE["billingCity"];
+$billingState = $_COOKIE["billingState"];
+$billingZip = $_COOKIE["billingZip"];
+
 //outputing cookies
 echo '<div class="info rectangle">';
 echo "<p>Order confirmed, here is your info!</p>";
@@ -83,8 +93,32 @@ else
 		$cid = $cid + 1;
 	}
 
+
 // Insert some data
 $customersLink -> query("INSERT INTO customer VALUES ('$cid', '$firstName', '$lastName')");
+
+
+
+// payments inserts
+//connect to the db
+$host = "localhost";
+$user = "root";
+$db = "Payments";
+$pass = "";
+
+$paymentsLink = mysqli_connect($host,$user,$pass,$db); 
+if ($paymentsLink->connect_errno>0) 
+{
+    die('Could not connect: ' . $db->error ); 
+}
+
+$db_selected = mysqli_select_db($paymentsLink, $db); 
+if (!$db_selected) 
+{
+    die ('Can\'t use database $db : ' . $db->error); 
+}
+
+$paymentsLink -> query("INSERT INTO Customer_Card VALUES ('$cardNum', '$cid', '$cvnNum', '$cardMonth', '$cardYear', '$cardName', '$billingAddress', '$billingCity', '$billingState', '$billingZip')");
 
 ?>
 

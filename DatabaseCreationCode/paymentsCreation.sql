@@ -1,0 +1,40 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema Payments
+-- -----------------------------------------------------
+DROP SCHEMA IF EXISTS `Payments` ;
+
+-- -----------------------------------------------------
+-- Schema Payments
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `Payments` DEFAULT CHARACTER SET utf8 ;
+USE `Payments` ;
+
+-- -----------------------------------------------------
+-- Table `Customer_Card`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `Customer_Card` ;
+
+CREATE TABLE IF NOT EXISTS `Customer_Card` (
+  `card_number` INT NOT NULL,
+  `cid` INT NOT NULL,
+  `CVN` VARCHAR(255) NOT NULL,
+  `card_month` VARCHAR(255) NOT NULL,
+  `card_year` VARCHAR(255) NOT NULL,
+  `card_name` VARCHAR(255) NOT NULL,
+  `card_address` VARCHAR(255) NOT NULL,
+  `card_city` VARCHAR(255) NOT NULL,
+  `card_state` VARCHAR(255) NOT NULL,
+  `card_zip` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`card_number`))
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
