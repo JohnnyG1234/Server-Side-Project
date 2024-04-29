@@ -21,7 +21,7 @@
 
 <?php
 
-//getting cookies
+//customer cookies cookies
 $firstName =  $_COOKIE["firstName"];
 $lastName = $_COOKIE["lastName"];
 $email = $_COOKIE["email"];
@@ -31,6 +31,7 @@ $city = $_COOKIE["city"];
 $state = $_COOKIE["state"];
 $zip = $_COOKIE["zip"];
 
+//billing cookies
 $cardNum = $_COOKIE["cardNum"];
 $cvnNum = $_COOKIE["cvnNum"];
 $cardMonth = $_COOKIE["cardMonth"];
@@ -40,6 +41,17 @@ $billingAddress = $_COOKIE["billingAddress"];
 $billingCity = $_COOKIE["billingCity"];
 $billingState = $_COOKIE["billingState"];
 $billingZip = $_COOKIE["billingZip"];
+
+//order cookies
+$bike1 = $_COOKIE["bike1"];
+$bike2 = $_COOKIE["bike2"];
+$bike3 = $_COOKIE["bike3"];
+$bike4 = $_COOKIE["bike4"];
+
+echo "<p> $bike1 </p>";
+echo "<p> $bike2 </p>";
+echo "<p> $bike3 </p>";
+echo "<p> $bike4 </p>";
 
 //outputing cookies
 echo '<div class="info rectangle">';

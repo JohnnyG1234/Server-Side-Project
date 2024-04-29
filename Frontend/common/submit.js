@@ -1,6 +1,8 @@
 //This is really gross I'm sorry! -John
 const validateData = () => {
-    
+
+    validateBikes();
+
     //customer info
     const firstName = document.form.firstname.value;
     const lastName = document.form.lastname.value;
@@ -203,3 +205,53 @@ const validateData = () => {
     return true;
 }
 
+
+
+//Mason Lee's find cookie function!!!
+function findCookie(val) {
+    let cookieString = document.cookie;
+
+    cookieString = cookieString.split(";")
+
+    for (let i = 0; i < cookieString.length; i++)
+    {
+        let cookiePair = cookieString[i].split("=");
+        if (cookiePair[0].trim() == val)
+        {
+            return cookiePair[1]
+        }
+    }
+			
+}
+
+function validateBikes() {
+    const bike1 = findCookie("bike1");
+    const bike2 = findCookie("bike2");
+    const bike3 = findCookie("bike3");
+    const bike4 = findCookie("bike4");
+
+    if (bike1 == undefined)
+    {
+        document.cookie="bike1=0;expires="+expdate+";path=/;SameSite ='Lax'";
+    }
+
+    if (bike2 == undefined)
+    {
+        document.cookie="bike2=0;expires="+expdate+";path=/;SameSite ='Lax'";
+    }
+
+    if (bike3 == undefined)
+    {
+        document.cookie="bike3=0;expires="+expdate+";path=/;SameSite ='Lax'";
+    }
+
+    if (bike4 == undefined)
+    {
+        document.cookie="bike4=0;expires="+expdate+";path=/;SameSite ='Lax'";
+    }
+
+    console.log(bike1);
+    console.log(bike2);
+    console.log(bike3);
+    console.log(bike4);
+}
