@@ -48,11 +48,6 @@ $bike2 = $_COOKIE["bike2"];
 $bike3 = $_COOKIE["bike3"];
 $bike4 = $_COOKIE["bike4"];
 
-echo "<p> $bike1 </p>";
-echo "<p> $bike2 </p>";
-echo "<p> $bike3 </p>";
-echo "<p> $bike4 </p>";
-
 //outputing cookies
 echo '<div class="info rectangle">';
 echo "<p>Order confirmed, here is your info!</p>";
@@ -123,14 +118,27 @@ if ($paymentsLink->connect_errno>0)
 {
     die('Could not connect: ' . $db->error ); 
 }
-
 $db_selected = mysqli_select_db($paymentsLink, $db); 
 if (!$db_selected) 
 {
     die ('Can\'t use database $db : ' . $db->error); 
 }
 
-$paymentsLink -> query("INSERT INTO Customer_Card VALUES ('$cardNum', '$cid', '$cvnNum', '$cardMonth', '$cardYear', '$cardName', '$billingAddress', '$billingCity', '$billingState', '$billingZip')");
+//check if card already exists in the database
+$cardNumberQuery = "SELECT card_number FROM payments.customer_card where payments.customer_card.card_number = $cardNum";
+$cardResult = $paymentsLink -> query($cardNumberQuery);
+
+if ($cardResult->num_rows > 0) {
+    // output data of each row
+    while($row = $cardResult->fetch_assoc()) {
+      //echo "Card Num: " . $row["card_number"]. "<br>";
+      //echo "card already exists";
+    }
+  } else {
+    //card does not exist
+    $paymentsLink -> query("INSERT INTO Customer_Card VALUES ('$cardNum', '$cid', '$cvnNum', '$cardMonth', '$cardYear', '$cardName', '$billingAddress', '$billingCity', '$billingState', '$billingZip')");
+  }
+
 
 ?>
 
