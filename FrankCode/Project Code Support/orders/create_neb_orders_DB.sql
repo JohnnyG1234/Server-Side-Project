@@ -118,7 +118,7 @@ Constraint FK_Orders
 drop table if exists OrderPayCard;
 create table if not exists OrderPayCard(
 order_id int not null,
-card_number int not null,
+card_number BIGINT not null,
 amt int not null,
 primary key(order_id, card_number),
 Constraint FK_Orders2

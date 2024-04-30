@@ -104,21 +104,21 @@ else
 	$cid = $cid + 1;
 }
 
-// Getting max customer ID
+// Getting max address ID
 $addQuery = "SELECT add_id FROM customers.address
 WHERE add_id=(SELECT MAX(add_id) FROM customers.address)";
 $addResult = mysqli_query($customersLink,$addQuery);
 while($row = mysqli_fetch_array($addResult))
 {
-    $add_id = $row['cid'];
+    $add_id = $row['add_id'];
 }
-    if(!isset($cid))
+    if(!isset($add_id))
 {
     $add_id = 1;
 }
 else
 {
-    $add_id = $cid + 1;
+    $add_id = $add_id + 1;
 }
 
 // Insert customer data
@@ -216,7 +216,7 @@ if ($cardResult->num_rows > 0) {
     //insert into payments and order payment
     $paymentsLink -> query("INSERT INTO Customer_Card VALUES ('$cardNum', '$cid', '$cvnNum', '$cardMonth', '$cardYear', '$cardName', '$billingAddress', '$billingCity', '$billingState', '$billingZip')");
     $amount = ($bike1 * 500) + ($bike2 * 400) + ($bike3 * 1000) + ($bike4 * 1500);
-    $orerLink -> query("INSERT INTO orderpaycard VALUES ('$order_id', '$cardNum', '$amount' )");
+    $orderLink -> query("INSERT INTO orderpaycard VALUES ('$order_id', '$cardNum', '$amount' )");
 }
 
 
