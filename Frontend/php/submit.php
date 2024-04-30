@@ -146,8 +146,8 @@ if (!$db_selected)
 }
 
 // Getting max order ID
-$orderidQuery = "SELECT order_id FROM orders.orderdata
-		 WHERE order_id=(SELECT MAX(order_id) FROM orders.orderdata)";
+$orderidQuery = "SELECT order_id FROM neb_orders.orderdata
+		 WHERE order_id=(SELECT MAX(order_id) FROM neb_orders.orderdata)";
 $orderidResult = mysqli_query($orderLink,$orderidQuery);
 while($row = mysqli_fetch_array($orderidResult))
 	{
