@@ -225,6 +225,10 @@ function findCookie(val) {
 }
 
 function validateBikes() {
+    //date setup for cookies
+    var today = new Date();
+    var expdate = today.getTime()+(1000*60*60*24*7);
+
     const bike1 = findCookie("bike1");
     const bike2 = findCookie("bike2");
     const bike3 = findCookie("bike3");
