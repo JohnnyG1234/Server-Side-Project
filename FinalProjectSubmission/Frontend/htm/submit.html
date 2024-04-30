@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>New-England-Bikes-Submit</title>
+    <link rel="stylesheet" href="../common/submit.css">
+    <link rel="icon" type="image/x-icon" href="../img/bike.svg">
+    <script type="text/javascript" src="../common/submit.js"></script> 
+  </head>
+  <body class="text body">
+    <div class="grid-container">
+        <div class="navbar navBarFlex">
+            <div><a href="home.htm">Home</a></div>
+            <div> <a href="shop.html">Shop</a></div>
+            <div><a href="cart.html">Cart</a></div>
+            <div><a href="about.html">About</a></div>
+        </div>
+
+        <form class="form" name='form' action="../php/submit.php" method="post" onsubmit='return validateData();'>
+
+            <label for="fname">First Name: </label>
+            <input class="formInput" id="fname" name="firstname" placeholder="Your name.." type="text">
+
+            <label for="lname">Last Name: </label>
+            <input class="formInput" id="lname" name="lastname" placeholder="Your name.." type="text">  
+
+            <label for="email">Email: </label>
+            <input class="formInput" id="email" name="email" placeholder="Your email.." type="text">  
+
+            <label for="scode">Phone Number: </label>
+            <div class="phoneNumber">
+              <input name='scode' type='text' maxlength='3' size='3'> 
+              <input name='sch' maxlength='3' type='text'  size='3'> - 
+              <input name='snumber' type='text' maxlength='4' size='4'>
+            </div>
+
+            <label for="address">Shipping Address: </label>
+            <input class="formInput" id="addr" name="address" placeholder="Your Address.." type="text">  
+
+            <label for="city">City: </label>
+            <input class="formInput" id="city" name="city" placeholder="Your City.." type="text">
+
+            <label for="state">State: </label>
+            <input class="formInput" maxlength='2' id="state" name="state" placeholder="Your State.." type="text">
+
+            <label for="zip">Zip Code: </label>
+            <input class="formInput" maxlength='5' id="zip" name="zip" placeholder="Your Zip Code.." type="text">
+
+            <label for="cardNumber">Card Number: </label>
+            <input class="formInput" maxlength='16' id="cardNumber" name="cardNumber" placeholder="Your Card Number.." type="text">
+            
+            <label for="CVN">CVN: </label>
+            <input name='CVN' type='text' maxlength='3' size='3'> 
+            
+            <label for="cardMonth">Card Expiration Month: </label>
+            <select id="cardMonth" name="cardMonth">
+              <option value="0">Select Month:</option>
+              <option value="01">01</option>
+              <option value="02">02</option>
+              <option value="03">03</option>
+              <option value="04">04</option>
+              <option value="05">05</option>
+              <option value="06">06</option>
+              <option value="07">07</option>
+              <option value="08">08</option>
+              <option value="09">09</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+
+            <label for="cardYear">Card Expiration Year: </label>
+            <select id="cardYear" name="cardYear">
+              <option value="0">Select Year:</option>
+              <option value="2025">2025</option>
+              <option value="2026">2026</option>
+              <option value="2027">2027</option>
+              <option value="2028">2028</option>
+              <option value="2029">2029</option>
+              <option value="2030">2030</option>
+            </select>
+
+            <br/>
+
+            <label for="cardName">Name On Card: </label>
+            <input class="formInput" id="cardName" name="cardName" placeholder="Name On Card.." type="text">
+
+            <label for="billingAddress">Billing Address: </label>
+            <input class="formInput" id="billingAddress" name="billingAddress" placeholder="Billing Address.." type="text">  
+
+            <label for="billingCity">Billing City: </label>
+            <input class="formInput" id="billingCity" name="billingCity" placeholder="Billing City.." type="text">
+
+            <label for="billingState">Billing State: </label>
+            <input class="formInput" maxlength='2' id="billingState" name="billingState" placeholder="Billing State.." type="text">
+
+            <label for="billingZip">Billing Zip Code: </label>
+            <input class="formInput" maxlength='5' id="billingZip" name="billingZip" placeholder="Billing Zip Code.." type="text">
+
+              
+            <input class="button" type="submit" value='Continue'>
+        </form>
+        
+
+
+    </div>
+    <footer>
+      <small>
+        Copyright © 2024 Server Side Grus. All Rights Reserved.
+      </small>
+    </footer>
+
+  </body>
+</html>

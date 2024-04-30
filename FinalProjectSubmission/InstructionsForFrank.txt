@@ -1,0 +1,23 @@
+Good morning, afternoon, evening or whatever time you are looking at this project.
+
+We have gathered all the necessary files that you need.
+The frontend folder contains all the html, css, javascript, and php.
+The backend folder contains all the mysql database code.
+
+For this project we used wampsever to run the databases and frontend code together. 
+Beforehand, please start up wampserver.
+
+First, make sure you unzip the submission folder and place it into your wampserver www folder.
+Then, create the databases with the backend files and then insert the data into the databases with the
+insert_data files. 
+
+Second, open a web broswer of your choosing. Enter localhost\Server-Side-Project\Frontend\htm folder in the search,
+then open the home.html.
+
+From here, explore the pages! Add bikes to the cart, place your order, and you should get a order confirmed page. 
+Afterwords, check the database and query to find the data you entered. Customers should have your name, contact, 
+and shipping information. Orders should have created a new order with the order data showing how may bikes were ordered.
+Payment should have the billing information you entered.
+
+And look! We're done. Wooooooo!
+Thanks for watching.
