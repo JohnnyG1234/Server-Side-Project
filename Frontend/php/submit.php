@@ -66,16 +66,21 @@ echo "</div>";
 //connect to the db
 $host = "localhost";
 $user = "root";
-$db = "customers";
 $pass = "";
 
-$customersLink = mysqli_connect($host,$user,$pass,$db); 
+// ----------------------
+// CUSTOMER INSERTS
+// ----------------------
+
+$custdb = "customers";
+
+$customersLink = mysqli_connect($host,$user,$pass,$custdb); 
 if ($customersLink->connect_errno>0) 
 {
     die('Could not connect: ' . $db->error ); 
 }
 
-$db_selected = mysqli_select_db($customersLink, $db); 
+$db_selected = mysqli_select_db($customersLink, $custdb); 
 if (!$db_selected) 
 {
     die ('Can\'t use database $db : ' . $db->error); 
@@ -83,7 +88,6 @@ if (!$db_selected)
 
 
 // Getting max customer ID
-
 $idQuery = "SELECT cid FROM customers.customer
 		 WHERE cid=(SELECT MAX(cid) FROM customers.customer)";
 $idResult = mysqli_query($customersLink,$idQuery);
@@ -100,11 +104,48 @@ else
 		$cid = $cid + 1;
 	}
 
-
-// Insert some data
+// Insert customer data
 $customersLink -> query("INSERT INTO customer VALUES ('$cid', '$firstName', '$lastName')");
 
+// ----------------------
+// ORDER INSERTS
+// ----------------------
 
+$orderdb = "orders";
+$orderLink = mysqli_connect($host,$user,$pass,$orderdb); 
+if ($orderLink->connect_errno>0) 
+{
+    die('Could not connect: ' . $db->error ); 
+}
+
+$db_selected = mysqli_select_db($orderLink, $orderdb); 
+if (!$db_selected) 
+{
+    die ('Can\'t use database $db : ' . $db->error); 
+}
+
+// Getting max order ID
+$orderidQuery = "SELECT order_id FROM orders.orderdata
+		 WHERE order_id=(SELECT MAX(order_id) FROM orders.orderdata)";
+$orderidResult = mysqli_query($orderLink,$orderidQuery);
+while($row = mysqli_fetch_array($orderidResult))
+	{
+		$order_id = $row['order_id'];
+	}
+if(!isset($order_id))
+	{
+		$order_id = 1;
+	}
+else
+	{
+		$order_id = $order_id + 1;
+	}
+
+// Insert order data
+$orderLink -> query("INSERT INTO orderdata VALUES ('$cid', '$order_id', NOW())");
+$orderLink -> query("INSERT INTO orderstatus VALUES ('$order_id', 1, NOW())");
+
+$orderLink -> query("INSERT INTO lineitem VALUES ('$order_id', 1, NOW())");
 
 // payments inserts
 //connect to the db
@@ -119,10 +160,7 @@ if ($paymentsLink->connect_errno>0)
     die('Could not connect: ' . $db->error ); 
 }
 $db_selected = mysqli_select_db($paymentsLink, $db); 
-if (!$db_selected) 
-{
-    die ('Can\'t use database $db : ' . $db->error); 
-}
+
 
 //check if card already exists in the database
 $cardNumberQuery = "SELECT card_number FROM payments.customer_card where payments.customer_card.card_number = $cardNum";
