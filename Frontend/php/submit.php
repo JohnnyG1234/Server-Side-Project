@@ -92,20 +92,41 @@ $idQuery = "SELECT cid FROM customers.customer
 		 WHERE cid=(SELECT MAX(cid) FROM customers.customer)";
 $idResult = mysqli_query($customersLink,$idQuery);
 while($row = mysqli_fetch_array($idResult))
-	{
-		$cid = $row['cid'];
-	}
+{
+	$cid = $row['cid'];
+}
 if(!isset($cid))
-	{
-		$cid = 1;
-	}
+{
+	$cid = 1;
+}
 else
-	{
-		$cid = $cid + 1;
-	}
+{
+	$cid = $cid + 1;
+}
+
+// Getting max customer ID
+$addQuery = "SELECT add_id FROM customers.address
+WHERE add_id=(SELECT MAX(add_id) FROM customers.address)";
+$addResult = mysqli_query($customersLink,$addQuery);
+while($row = mysqli_fetch_array($addResult))
+{
+    $add_id = $row['cid'];
+}
+    if(!isset($cid))
+{
+    $add_id = 1;
+}
+else
+{
+    $add_id = $cid + 1;
+}
 
 // Insert customer data
 $customersLink -> query("INSERT INTO customer VALUES ('$cid', '$firstName', '$lastName')");
+$customersLink -> query("INSERT INTO customercontact VALUES ('$cid', 11, '$email')");
+$customersLink -> query("INSERT INTO customercontact VALUES ('$cid', 44, '$phone')");
+$customersLink -> query("INSERT INTO address VALUES ('$add_id', '$addr', '$city', '$state', '$zip')");
+$customersLink -> query("INSERT INTO customeraddresstype VALUES ('$cid', '$add_id', 333)");
 
 // ----------------------
 // ORDER INSERTS
