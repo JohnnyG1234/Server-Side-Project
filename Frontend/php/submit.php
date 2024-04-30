@@ -165,9 +165,8 @@ else
 // Insert order data
 $orderLink -> query("INSERT INTO orderdata VALUES ('$cid', '$order_id', NOW())");
 $orderLink -> query("INSERT INTO orderstatus VALUES ('$order_id', 1, NOW())");
-$orerLink -> query("INSERT INTO orderpaycard VALUES ('$order_id', '$cardNum', '' )");
 
-
+//adding num of bikes
 if($bike1 > 0){
     $orderLink -> query("INSERT INTO lineitem VALUES ('$order_id', 1023 , $bike1)");
 }
@@ -214,8 +213,11 @@ if ($cardResult->num_rows > 0) {
     }
   } else {
     //card does not exist
+    //insert into payments and order payment
     $paymentsLink -> query("INSERT INTO Customer_Card VALUES ('$cardNum', '$cid', '$cvnNum', '$cardMonth', '$cardYear', '$cardName', '$billingAddress', '$billingCity', '$billingState', '$billingZip')");
-  }
+    $amount = ($bike1 * 500) + ($bike2 * 400) + ($bike3 * 1000) + ($bike4 * 1500);
+    $orerLink -> query("INSERT INTO orderpaycard VALUES ('$order_id', '$cardNum', '$amount' )");
+}
 
 
 ?>
