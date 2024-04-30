@@ -86,34 +86,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS OrderPayment ;
 
-CREATE TABLE IF NOT EXISTS OrderPayment (
-  order_id INT NOT NULL,
-  cid INT NOT NULL,
-  method_id INT NOT NULL,
-  INDEX fk_OrderPayment_Order1_idx (order_id ASC),
-  PRIMARY KEY (order_id),
-  CONSTRAINT fk1_OrderPayment_Order1
-    FOREIGN KEY (order_id)
-    REFERENCES OrderData (order_id)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE)
-ENGINE = InnoDB;
 
-Drop table if exists OrderPayCh;
-create table if not exists OrderPayCh(
-order_id int not null,
-acct_id int not null,
-amt int not null,
-primary key(order_id,acct_id),
-Constraint FK_Acct
-	foreign key(acct_id)
-    references payments.checking(acct_id)
-    on delete cascade
-    on update cascade,
-Constraint FK_Orders
-	foreign key(order_id)
-    references OrderPayment(order_id)
-);
 
 drop table if exists OrderPayCard;
 create table if not exists OrderPayCard(
