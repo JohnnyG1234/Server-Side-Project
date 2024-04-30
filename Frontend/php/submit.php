@@ -111,7 +111,7 @@ $customersLink -> query("INSERT INTO customer VALUES ('$cid', '$firstName', '$la
 // ORDER INSERTS
 // ----------------------
 
-$orderdb = "orders";
+$orderdb = "neb_orders";
 $orderLink = mysqli_connect($host,$user,$pass,$orderdb); 
 if ($orderLink->connect_errno>0) 
 {
@@ -144,8 +144,27 @@ else
 // Insert order data
 $orderLink -> query("INSERT INTO orderdata VALUES ('$cid', '$order_id', NOW())");
 $orderLink -> query("INSERT INTO orderstatus VALUES ('$order_id', 1, NOW())");
+$orerLink -> query("INSERT INTO orderpaycard VALUES ('$order_id', '$cardNum', '' )");
 
-$orderLink -> query("INSERT INTO lineitem VALUES ('$order_id', 1, NOW())");
+
+if($bike1 > 0){
+    $orderLink -> query("INSERT INTO lineitem VALUES ('$order_id', 1023 , $bike1)");
+}
+if($bike2 > 0){
+    $orderLink -> query("INSERT INTO lineitem VALUES ('$order_id', 1125 , $bike1)");  
+}
+if($bike3 > 0 ){
+    $orderLink -> query("INSERT INTO lineitem VALUES ('$order_id', 1705 , $bike1)");  
+}
+if($bike4 > 0){
+    $orderLink -> query("INSERT INTO lineitem VALUES ('$order_id', 1896 , $bike1)");  
+}
+
+
+
+// ----------------------
+// PAYMENT INSERTS
+// ----------------------
 
 // payments inserts
 //connect to the db
