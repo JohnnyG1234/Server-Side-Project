@@ -1,4 +1,4 @@
-use orders;
+use neb_orders;
 
 delete from OrderStatus where statusID>0;
 delete from LineItem where order_id>1000;
@@ -55,9 +55,6 @@ insert into OrderData values(52,1039,'2019-01-30');
 insert into OrderData values(55,1040,'2019-02-01');
 insert into OrderData values(58,1041,'2019-01-16');
 insert into OrderData values(61,1042,'2019-04-06');
-
-
-
 
 insert into OrderStatus values(1001,1,'2019-05-01 00:00:00');
 insert into OrderStatus values(1001,2,'2019-05-01 00:00:00');
@@ -144,7 +141,7 @@ insert into OrderPayment values(1009,19,111);
 insert into OrderPayment values(1010,20,222);
 insert into OrderPayment values(1011,21,333);
 insert into OrderPayment values(1012,22,333);
-insert into OrderPayment values(1013,23,222);
+insert into OrderPayment values(1013,1023,222);
 insert into OrderPayment values(1014,104,111);
 insert into OrderPayment values(1015,105,222);
 insert into OrderPayment values(1016,106,333);
@@ -159,32 +156,32 @@ insert into OrderPayment values(1024,105,333);
 insert into OrderPayment values(1025,106,333);
 insert into OrderPayment values(1026,107,222);
 
-insert into LineItem values(1001,896,1);
-insert into LineItem values(1002,705,1);
-insert into LineItem values(1003,23,1);
-insert into LineItem values(1004,125,2);
-insert into LineItem values(1005,896,2);
-insert into LineItem values(1006,705,1);
-insert into LineItem values(1007,23,1);
-insert into LineItem values(1008,705,1);
-insert into LineItem values(1009,23,1);
-insert into LineItem values(1010,896,1);
-insert into LineItem values(1011,705,1);
-insert into LineItem values(1012,705,1);
-insert into LineItem values(1013,125,1);
-insert into LineItem values(1014,896,1);
-insert into LineItem values(1015,23,1);
-insert into LineItem values(1016,125,7);
-insert into LineItem values(1017,705,3);
-insert into LineItem values(1018,23,6);
-insert into LineItem values(1019,896,4);
-insert into LineItem values(1020,896,10);
-insert into LineItem values(1021,896,8);
-insert into LineItem values(1022,705,2);
-insert into LineItem values(1023,896,10);
-insert into LineItem values(1024,125,10);
-insert into LineItem values(1025,125,8);
-insert into LineItem values(1026,125,4);
+insert into LineItem values(1001,1896,1);
+insert into LineItem values(1002,1705,1);
+insert into LineItem values(1003,1023,1);
+insert into LineItem values(1004,1125,2);
+insert into LineItem values(1005,1896,2);
+insert into LineItem values(1006,1705,1);
+insert into LineItem values(1007,1023,1);
+insert into LineItem values(1008,1705,1);
+insert into LineItem values(1009,1023,1);
+insert into LineItem values(1010,1896,1);
+insert into LineItem values(1011,1705,1);
+insert into LineItem values(1012,1705,1);
+insert into LineItem values(1013,1125,1);
+insert into LineItem values(1014,1896,1);
+insert into LineItem values(1015,1023,1);
+insert into LineItem values(1016,1125,7);
+insert into LineItem values(1017,1705,3);
+insert into LineItem values(1018,1023,6);
+insert into LineItem values(1019,1896,4);
+insert into LineItem values(1020,1896,10);
+insert into LineItem values(1021,1896,8);
+insert into LineItem values(1022,1705,2);
+insert into LineItem values(1023,1896,10);
+insert into LineItem values(1024,1125,10);
+insert into LineItem values(1025,1125,8);
+insert into LineItem values(1026,1125,4);
 
 
 select * from OrderData;
