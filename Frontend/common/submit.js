@@ -174,7 +174,7 @@ const validateData = () => {
     //everything is valid so make cookies 
     //date setup for cookies
     var today = new Date();
-    var expdate = today.getTime()+(1000*60*60*24*7);
+    const expdate = today.getTime()+(1000*60*60*24*7);
 
     //customer cookies
     document.cookie="firstName="+firstName+";expires="+expdate+";path=/;SameSite ='Lax'";
@@ -227,7 +227,7 @@ function findCookie(val) {
 function validateBikes() {
     //date setup for cookies
     var today = new Date();
-    var expdate = today.getTime()+(1000*60*60*24*7);
+    const expdate = today.getTime()+(1000*60*60*24*7);
 
     const bike1 = findCookie("bike1");
     const bike2 = findCookie("bike2");
