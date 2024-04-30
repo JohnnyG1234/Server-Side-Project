@@ -1,4 +1,3 @@
-
 SELECT * FROM customers.address;
 SELECT * FROM customers.customer;
 SELECT * FROM customers.customercontact;
