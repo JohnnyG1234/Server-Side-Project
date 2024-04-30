@@ -134,3 +134,9 @@ a {
     cursor:pointer;  
     transition-duration: 200ms;
   }
+
+  footer {
+    text-align: center;
+    background-color: #95b79a;
+    padding: auto;
+  }

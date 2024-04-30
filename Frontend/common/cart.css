@@ -99,3 +99,9 @@ a {
   justify-self: center;
   align-self: center;
 }
+
+footer {
+  text-align: center;
+  background-color: #95b79a;
+  padding: auto;
+}

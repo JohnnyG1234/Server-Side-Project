@@ -106,3 +106,9 @@ select{
   width: 10%;
 }
 
+footer {
+  text-align: center;
+  background-color: #95b79a;
+  padding: auto;
+}
+
